@@ -27,7 +27,6 @@ const paths = {
   },
 };
 
-//Kompilacja stylów:
 function styleTask() {
   return src(paths.scss.src, { sourcemaps: true })
     .pipe(concat("style.css"))
@@ -38,7 +37,6 @@ function styleTask() {
     .pipe(browserSync.stream());
 }
 
-//Kompilacja plików JavaScript:
 function jsTask() {
   return src(paths.js.src, { sourcemaps: true })
     .pipe(concat("all.js"))
@@ -47,17 +45,14 @@ function jsTask() {
     .pipe(browserSync.stream());
 }
 
-//Kompilacja plików HTML:
 function htmlTask() {
   return src(paths.html.src).pipe(dest(paths.html.dest));
 }
 
-//Kompilacja kompresji obrazków:
 function imgTask() {
   return src(paths.img.src).pipe(imagemin()).pipe(dest(paths.img.dest));
 }
 
-//Kompilacja nasłuchiwania na zmiany w plikach:
 function watchTask() {
   browserSync.init({
     server: {
