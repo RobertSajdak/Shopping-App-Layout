@@ -1,4 +1,4 @@
-# Shopping App
+# Shopping App "Doya"
 
 ### Layout of the shopping application used to buy gifts and gadgets.
 
